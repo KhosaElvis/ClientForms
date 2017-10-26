@@ -32,6 +32,10 @@ namespace ClientForms
             string result = await person.addPerson(person);
 
             MessageBox.Show(result);
+
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
         }
     }
 }

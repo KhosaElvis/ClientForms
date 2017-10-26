@@ -39,6 +39,7 @@ namespace ClientForms
         private void button9_Click(object sender, EventArgs e)
         {
             AddClient addClient = new AddClient();
+            this.Hide();
             addClient.Show();
         }
 
@@ -88,6 +89,11 @@ namespace ClientForms
         private void button12_Click(object sender, EventArgs e)
         {
             exportToFile();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
 
         }
     }

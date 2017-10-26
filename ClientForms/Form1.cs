@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,7 +65,29 @@ namespace ClientForms
             UpdateClient updateClient = new UpdateClient(userId, Name, Surname, Gender, Ethnicity, Language, Nationality);
             updateClient.Show();
 
+        }
 
+        private void exportToFile()
+        {
+            TextWriter writer = new StreamWriter(@"C:\Users\Reverside\source\repos\ClientForms\ClientForms\Models\ClientData.csv");
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    writer.Write(dataGridView1.Rows[i].Cells[j].Value.ToString()+",");
+                    
+                }
+                writer.Write("\n");
+
+            }
+            
+            writer.Close();
+            MessageBox.Show("Data Exported");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            exportToFile();
 
         }
     }

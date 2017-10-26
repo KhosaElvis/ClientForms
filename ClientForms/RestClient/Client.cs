@@ -94,7 +94,7 @@ namespace ClientForms.RestClient
 
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            var result = await httpClient.PutAsync(baseUri + id, httpContent);
+            var result = await httpClient.PutAsync(string.Format("{0}{1}?Id={2}", baseUri, subUrl, id), httpContent);
 
             return result.Content.ToString();
         }

@@ -47,5 +47,25 @@ namespace ClientForms
             int userId = (int)dataGridView1.SelectedCells[0].Value;
             string result = await deleteClient.RemovePerson(userId);
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            int userId = (int)dataGridView1.SelectedCells[0].Value;
+            int rowIndex = (int)dataGridView1.CurrentCell.RowIndex;
+
+            //MessageBox.Show(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
+            string Name = (string)dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+            string Surname = (string)dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+            string Gender = (string)dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+            string Ethnicity = (string)dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+            string Language = (string)dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+            string Nationality = (string)dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+
+            UpdateClient updateClient = new UpdateClient(userId, Name, Surname, Gender, Ethnicity, Language, Nationality);
+            updateClient.Show();
+
+
+
+        }
     }
 }

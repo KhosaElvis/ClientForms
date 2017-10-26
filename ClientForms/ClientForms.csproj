@@ -147,6 +147,12 @@
     <Compile Include="RestClient\Class1.cs" />
     <Compile Include="RestClient\Client.cs" />
     <Compile Include="RestClient\IClient.cs" />
+    <Compile Include="UpdateClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateClient.Designer.cs">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +171,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateClient.resx">
+      <DependentUpon>UpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClientDBRTTDataSet.xsc">
       <DependentUpon>ClientDBRTTDataSet.xsd</DependentUpon>
     </None>

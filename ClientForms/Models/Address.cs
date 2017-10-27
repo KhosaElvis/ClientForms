@@ -35,10 +35,16 @@ namespace ClientForms.Models
             return ret;
         }
 
-        public static string UpdateAddress(int Id, Address address)
+        public static string UpdateAddress(int Id, Address address, IClient<Address> client = null)
         {
             string ret = null;
 
+            if (client == null)
+            {
+                client = new Client<Address>(baseUrl, subUrl);
+            }
+
+            
             return ret;
         }
 
@@ -49,11 +55,16 @@ namespace ClientForms.Models
             return ret;
         }
 
-        public static Address SearchAddress(int Id)
+        public async Task<Address> SearchAddress(int Id, IClient<Address> client = null)
         {
             Address ret = new Address();
 
-            
+            if (client == null)
+            {
+                client = new Client<Address>(baseUrl, subUrl);
+            }
+
+            ret = await client.GetTaskAsync(Id);
             return ret;
         }
 

@@ -96,5 +96,26 @@ namespace ClientForms
         {
 
         }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            int userId = (int)dataGridView1.SelectedCells[0].Value;
+
+
+            Address address = new Address();
+            // Display Client Address
+
+            //addresses.Add( new Address
+            //{
+            //    Id = 1,
+            //    AreaCode = "123",
+            //    City = "Jo'Burg",
+            //    AreaIdName = "Midrand",
+            //    StreetAddress = "Magaula Street 12",
+            //    PersonId = 2
+            //});
+            address = await address.SearchAddress(userId);
+            dataGridView2.DataSource = address;
+        }
     }
 }

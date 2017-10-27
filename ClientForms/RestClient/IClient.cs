@@ -9,6 +9,7 @@ namespace ClientForms.RestClient
     public interface IClient<T>
     {
         Task<List<T>> GetTaskAsync();
+        Task<T> GetTaskAsync(int Id);
         Task<string> PostAsync(T t);
         Task<string> PostAsync(T t,int id);
         Task<string> PutAsync(int id, T t);
